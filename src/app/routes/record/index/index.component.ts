@@ -22,7 +22,16 @@ export class ProjectComponent implements OnInit {
     { title: '预约人手机号', index: 'tel' },
     { title: '入园人姓名', index: 'name' },
     { title: '入园人身份证号', index: 'idCard' },
-    { title: '状态', index: 'status' },
+    {
+      title: '状态',
+      index: 'status',
+      type: 'badge',
+      badge: {
+        1: { text: '可用', color: 'success' },
+        2: { text: '已核销', color: 'default' },
+        3: { text: '已过期', color: 'error' },
+      },
+    },
     { title: '预约日期', index: 'appointDate' },
     { title: '核销码', index: 'code' },
     { title: '核销时间', index: 'checkoutTime' },
