@@ -10,7 +10,7 @@
         预约总数
       </span>
       <span>
-        1000
+        {{stat.totalNum}}
       </span>
     </div>
     <div class="cell">
@@ -18,7 +18,7 @@
         核销总数
       </span>
       <span>
-        200000
+        {{stat.totalCheckout}}
       </span>
     </div>
     <div class="cell">
@@ -26,7 +26,7 @@
         未核销总数
       </span>
       <span>
-        200
+        {{stat.totalNum-stat.totalCheckout}}
       </span>
     </div>
   </div>
@@ -36,7 +36,7 @@
         今日预约数
       </span>
       <span>
-        1000
+        {{stat.todayTotal}}
       </span>
     </div>
     <div class="cell">
@@ -44,7 +44,7 @@
         今日核销数
       </span>
       <span>
-        1000
+        {{stat.todayCheckout}}
       </span>
     </div>
     <div class="cell">
@@ -52,7 +52,7 @@
         今日未核销数
       </span>
       <span>
-        1000
+        {{stat.todayTotal-stat.todayCheckout}}
       </span>
     </div>
   </div>
@@ -61,17 +61,19 @@
 <nz-card [nzBordered]="false">
   <form nz-form se-container labelWidth="130">
     <se label="预约人手机号" col="2">
-      <input nz-input placeholder="请输入" [(ngModel)]="query.contactTel" name="contactTel" />
+      <input nz-input placeholder="请输入" [(ngModel)]="query.tel" name="contactTel" />
     </se>
     <se label="预约人身份证号" col="2">
-      <input style="width:100%" nz-input placeholder="请输入" [(ngModel)]="query.contact" name="contact " />
+      <input style="width:100%" nz-input placeholder="请输入" [(ngModel)]="query.idCard" name="contact " />
     </se>
     <se label="预约时间" col="2">
-      <nz-range-picker [(ngModel)]="query.range" [name]="range"></nz-range-picker>
+      <nz-date-picker class="input" [nzStyle]="{ width: '100%' }" nzFormat="yyyy-MM-dd" nzPlaceHolder="开始日期"
+        [(ngModel)]="query.startAppoint" name="startAppoint"></nz-date-picker>
     </se>
     <se label="状态" col="2">
-      <nz-select class="input" [(ngModel)]="query.test" nzAllowClear nzPlaceHolder="请选择">
-        <nz-option *ngFor="let option of StatusList" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+      <nz-select class="input" [(ngModel)]="query.status" nzAllowClear nzPlaceHolder="请选择" name="status">
+        <nz-option *ngFor="let option of StatusList" [nzValue]="option.value" [nzLabel]="option.label">
+        </nz-option>
       </nz-select>
     </se>
     <se col="2">
