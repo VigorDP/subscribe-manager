@@ -53,7 +53,7 @@ export class ProjectComponent implements OnInit {
   getData(pageIndex?: number) {
     this.loading = true;
     this.query.pageNo = pageIndex ? pageIndex : this.query.pageNo;
-    // this.api.getSocialProjectList(this.query).subscribe(res => {
+    // this.api.getSubscribeList(this.query).subscribe(res => {
     //   this.loading = false;
     //   const { rows, total: totalItem } = res.data || { rows: [], total: 0 };
     //   this.data = rows;

@@ -77,12 +77,6 @@ export class LayoutDefaultComponent implements OnInit, OnDestroy {
       this.menuSrv.add(backupMenus);
       return;
     }
-    this.api.getRoleInfo({ id: ramId }).subscribe(res => {
-      const ALLOW_MENU_NAMES = res.data.modules.map(module => module.name);
-      const finalMenus = getFilterMenus(backupMenus[0].children, ALLOW_MENU_NAMES);
-      backupMenus[0].children = finalMenus;
-      this.menuSrv.add(backupMenus);
-    });
   }
 
   ngOnInit() {
