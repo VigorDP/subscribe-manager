@@ -1,0 +1,41 @@
+<!--
+ * @Description
+ * @Date: 2019-10-18 14:29:07
+ * @LastEditors: FYC
+ * @Author: FYC
+ * @LastEditTime: 2019-10-19 09:20:53
+ -->
+<div class="form">
+  <form nz-form [formGroup]="form" (ngSubmit)="submit()" role="form">
+
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="'请输入用户名'">
+        <nz-input-group nzSize="large" nzPrefixIcon="user">
+          <input nz-input placeholder="请输入" formControlName="userName" placeholder="用户名" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="'请输入密码!'">
+        <nz-input-group nzSize="large" nzPrefixIcon="lock">
+          <input nz-input placeholder="请输入" type="password" formControlName="password" placeholder="密码" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control>
+        <nz-row>
+          <nz-col [nzSpan]="24">
+            <button class="submit submit_but" nz-button type="submit" nzType="primary" nzSize="large"
+              [nzLoading]="http.loading" nzBlock>
+              登录
+            </button>
+          </nz-col>
+        </nz-row>
+      </nz-form-control>
+
+    </nz-form-item>
+
+  </form>
+</div>
