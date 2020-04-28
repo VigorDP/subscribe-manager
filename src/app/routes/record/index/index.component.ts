@@ -37,7 +37,7 @@ export class ProjectComponent implements OnInit {
     { title: '核销时间', index: 'checkoutTime' },
   ];
 
-  stat = {};
+  stat = {} as any;
 
   @ViewChild('st', { static: true })
   st: STComponent;
