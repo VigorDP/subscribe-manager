@@ -32,6 +32,7 @@ export class ProjectComponent implements OnInit {
         3: { text: '已过期', color: 'error' },
       },
     },
+    { title: '提交时间', index: 'submitTime', type: 'date' },
     { title: '预约日期', index: 'appointDate' },
     { title: '核销码', index: 'code' },
     { title: '核销时间', index: 'checkoutTime' },
@@ -77,6 +78,9 @@ export class ProjectComponent implements OnInit {
     this.query.pageNo = pageIndex ? pageIndex : this.query.pageNo;
     if (this.query.startAppoint) {
       this.query.startAppoint = dayjs(this.query.startAppoint).format('YYYY-MM-DD');
+    }
+    if (this.query.endAppoint) {
+      this.query.endAppoint = dayjs(this.query.endAppoint).format('YYYY-MM-DD');
     }
     this.api.getSubscribeList(this.query).subscribe(res => {
       this.loading = false;

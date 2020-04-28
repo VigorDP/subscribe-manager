@@ -59,26 +59,31 @@
 </nz-card>
 
 <nz-card [nzBordered]="false">
-  <form nz-form se-container labelWidth="130">
-    <se label="预约人手机号" col="2">
-      <input nz-input placeholder="请输入" style="width:150px" [(ngModel)]="query.tel" name="contactTel" maxlength="11" />
+  <form nz-form se-container>
+    <se label="预约人手机号" col="3">
+      <input nz-input placeholder="请输入预约人手机号" style="width:170px" [(ngModel)]="query.tel" name="contactTel"
+        maxlength="11" />
     </se>
-    <se label="预约人身份证号" col="2">
-      <input style="width:100%" nz-input placeholder="请输入" style="width:200px" [(ngModel)]="query.idCard"
+    <se label="预约人身份证号" col="3">
+      <input style="width:170px" nz-input placeholder="请输入预约人身份证号" style="width:170px" [(ngModel)]="query.idCard"
         name="contact " />
     </se>
-    <se label="预约日期" col="2">
-      <nz-date-picker class="input" style="width:150px" nzFormat="yyyy-MM-dd" nzPlaceHolder="预约日期"
-        [(ngModel)]="query.startAppoint" name="startAppoint"></nz-date-picker>
-    </se>
-    <se label="状态" col="2">
-      <nz-select class="input" style="width:200px" [(ngModel)]="query.status" nzAllowClear nzPlaceHolder="请选择"
+    <se label="状态" col="3">
+      <nz-select class="input" style="width:170px" [(ngModel)]="query.status" nzAllowClear nzPlaceHolder="请选择"
         name="status">
         <nz-option *ngFor="let option of StatusList" [nzValue]="option.value" [nzLabel]="option.label" maxlength="18">
         </nz-option>
       </nz-select>
     </se>
-    <se col="2">
+    <se label="预约开始日期" col="3">
+      <nz-date-picker class="input" style="width:170px" nzFormat="yyyy-MM-dd" nzPlaceHolder="预约开始日期"
+        [(ngModel)]="query.startAppoint" name="startAppoint"></nz-date-picker>
+    </se>
+    <se label="预约结束日期" col="3">
+      <nz-date-picker class="input" style="width:170px" nzFormat="yyyy-MM-dd" nzPlaceHolder="预约结束日期"
+        [(ngModel)]="query.endAppoint" name="endAppoint"></nz-date-picker>
+    </se>
+    <se col="3">
       <button nz-button [nzType]="'primary'" (click)="getData(1)" [nzLoading]="loading">查询</button>
       <button nz-button (click)="reset()" [disabled]="loading">重置</button>
     </se>
