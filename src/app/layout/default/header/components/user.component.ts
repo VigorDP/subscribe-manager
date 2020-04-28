@@ -14,7 +14,7 @@ import { RestService } from '@app/service';
       [nzDropdownMenu]="userMenu"
     >
       <nz-avatar [nzSrc]="settings.user.avatar" nzSize="small" class="mr-sm"></nz-avatar>
-      管理员
+      {{ settings.user.name }}
     </div>
     <nz-dropdown-menu #userMenu="nzDropdownMenu">
       <div nz-menu class="width-sm">

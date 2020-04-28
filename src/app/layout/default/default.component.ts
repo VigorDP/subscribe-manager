@@ -72,11 +72,7 @@ export class LayoutDefaultComponent implements OnInit, OnDestroy {
 
   private setMenu() {
     const backupMenus = cloneDeep(menus);
-    const { role = '', ramId = '' } = this.settings.user || {};
-    if (role === 'SUPER_ADMIN' || role === 'ADMIN') {
-      this.menuSrv.add(backupMenus);
-      return;
-    }
+    this.menuSrv.add(backupMenus);
   }
 
   ngOnInit() {

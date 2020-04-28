@@ -3,7 +3,7 @@
  * @Author: 风之化身
  * @Date: 2019-10-21 10:39:51
  * @Last Modified by: 风之化身
- * @Last Modified time: 2019-10-21 14:49:05
+ * @Last Modified time: 2020-04-28 14:21:44
  */
 
 export const config = {
@@ -13,7 +13,7 @@ export const config = {
   },
   user: {
     name: '管理员',
-    avatar: './assets/imgs/admin.png',
+    avatar: '../assets/imgs/admin.jpg',
     email: '15926339107@163.com',
   },
 };

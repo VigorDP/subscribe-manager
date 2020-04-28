@@ -107,7 +107,7 @@ export class UserLoginComponent implements OnInit {
       }
     }
     if (this.encryptReady) {
-      if (this.userName.value === 'hmf' && this.password.value === 'hmf666666') {
+      if (this.userName.value === 'admin' && this.password.value === 'fdjt123') {
         this.tokenService.set({ token: 'hmf' });
         this.router.navigateByUrl('record', { replaceUrl: true });
       } else {

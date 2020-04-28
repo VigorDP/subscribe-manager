@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     renderer.setAttribute(el.nativeElement, 'ng-alain-version', VERSION_ALAIN.full);
     renderer.setAttribute(el.nativeElement, 'ng-zorro-version', VERSION_ZORRO.full);
     settingSrv.setApp(config.app);
+    settingSrv.setUser(config.user);
   }
 
   ngOnInit() {
