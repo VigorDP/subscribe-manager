@@ -21,6 +21,15 @@ export class ProjectComponent implements OnInit {
   columns: STColumn[] = [
     { title: '预约人手机号', index: 'tel' },
     { title: '入园人姓名', index: 'name' },
+    {
+      title: '游客类型',
+      index: 'personTarget',
+      type: 'badge',
+      badge: {
+        1: { text: '成人', color: 'success' },
+        2: { text: '儿童', color: 'warning' },
+      },
+    },
     { title: '入园人身份证号', index: 'idCard' },
     {
       title: '状态',
@@ -34,6 +43,15 @@ export class ProjectComponent implements OnInit {
     },
     { title: '提交时间', index: 'submitTime', type: 'date' },
     { title: '预约日期', index: 'appointDate' },
+    {
+      title: '时间段',
+      index: 'timeInterval',
+      type: 'badge',
+      badge: {
+        1: { text: '上午', color: 'success' },
+        2: { text: '下午', color: 'warning' },
+      },
+    },
     { title: '核销码', index: 'code' },
     { title: '核销时间', index: 'checkoutTime' },
   ];
@@ -47,6 +65,16 @@ export class ProjectComponent implements OnInit {
     { label: '可用', value: 1 },
     { label: '已核销', value: 2 },
     { label: '已过期', value: 3 },
+  ];
+
+  timeIntervalList = [
+    { label: '上午', value: 1 },
+    { label: '下午', value: 2 },
+  ];
+
+  personTargetList = [
+    { label: '成人', value: 1 },
+    { label: '儿童', value: 2 },
   ];
 
   constructor(

@@ -83,6 +83,22 @@
       <nz-date-picker class="input" style="width:170px" nzFormat="yyyy-MM-dd" nzPlaceHolder="预约结束日期"
         [(ngModel)]="query.endAppoint" name="endAppoint"></nz-date-picker>
     </se>
+    <se label="时段" col="3">
+      <nz-select class="input" style="width:170px" [(ngModel)]="query.timeInterval" nzAllowClear nzPlaceHolder="请选择"
+        name="timeInterval">
+        <nz-option *ngFor="let option of timeIntervalList" [nzValue]="option.value" [nzLabel]="option.label"
+          maxlength="18">
+        </nz-option>
+      </nz-select>
+    </se>
+    <se label="游客类型" col="3">
+      <nz-select class="input" style="width:170px" [(ngModel)]="query.personTarget" nzAllowClear nzPlaceHolder="请选择"
+        name="timeInterval">
+        <nz-option *ngFor="let option of personTargetList" [nzValue]="option.value" [nzLabel]="option.label"
+          maxlength="18">
+        </nz-option>
+      </nz-select>
+    </se>
     <se col="3">
       <button nz-button [nzType]="'primary'" (click)="getData(1)" [nzLoading]="loading">查询</button>
       <button nz-button (click)="reset()" [disabled]="loading">重置</button>
